@@ -1,0 +1,10 @@
+from pydactyl import PterodactylClient
+
+# Create a client to connect to the panel and authenticate with your API key.
+api = PterodactylClient('https://control.fyrealnode.live', 'ptla_BgN8DyzmgTX63H00DoD81Opj064xeXCNqItUHzs0x61')
+
+# Create a server.  Customize the Nest and Egg IDs to match the IDs in your panel.
+# This server is created with a limit of 8000 MB of memory, no access to swap, unlimited disk space, in location_id 1.
+api.servers.create_server(name='My Paper Server', user_id=1, nest_id=1,
+                          egg_id=3, memory_limit=8000, swap_limit=0,
+                          backup_limit=0, disk_limit=0, location_ids=[1])
